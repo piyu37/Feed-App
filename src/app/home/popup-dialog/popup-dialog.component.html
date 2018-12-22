@@ -1,0 +1,39 @@
+<!-- html view when popup appears -->
+<div bsModal #popupModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content for-width">
+      <div class="modal-header">
+          <div class="post-data">
+              <div class="row add-post">
+                <div class=" col-sm-3 text-data" ><span class="glyphicon glyphicon-pencil" ></span>Make a post</div>
+                <div class="col-sm-3 image-data"><span class="glyphicon glyphicon-picture"></span>Photo</div>
+                <div class="col-sm-6">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+              </div>
+              
+            </div>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                  <div class="col-sm-12 input-group">
+                      <span class="input-group-addon post-input" ><img src="./assets/default.jpeg" class="profile-pic" alt="fb"></span>
+                      <textarea id="main-text" class="form-control post-input textareaElement" placeholder="Tell us something about yourself" autofocus aria-describedby="basic-addon1"></textarea> 
+                    </div>
+              </div>
+      </div>
+      <span class="input-group-addon post-input post-bg"><img src="" id="photo-upload" class="photo-upload" alt="add image here"></span>
+      <div class="modal-footer">
+        <label class="in-left">
+          <span id = "imagepic" class="glyphicon glyphicon-picture glyph-hover" title="add Picture"></span>
+          <input type="file" accept="image/*" style="display:none" (change)="savingImage($event)" />
+         </label>
+        <div class="pull-right">
+          <button class="btn btn-primary" (click)="postInformation()"> Post </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.textbox-style
+{
+    background-color: white;
+    padding: 1rem 1rem 0rem 1rem;
+    font-size: large;
+    color: dimgray;
+    border-radius: 0.5rem;
+    margin-top: -1.5rem;
+}
+
+.add-post {
+    background-color:#f6f7f9;
+    border: .3px  black;
+    height:30px;
+   
+}
+
+.modal-header 
+{
+    padding: 0 8px 7px 8px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.center-text
+{
+    
+}
+
+.image-data,.text-data {
+    padding: 7px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.glyphicon {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.close {
+    padding: 5px;
+}
+.post-input {
+    border: none;
+    background-color: white;
+    height: 40px;
+    box-shadow: unset;
+    padding-left: 0px;
+}
+
+.in-left
+{
+    float: left;
+    font-size: 2rem;
+}
+.profile-pic {
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 6rem;
+}
+.post-input {
+    box-shadow: unset;
+}

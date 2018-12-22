@@ -1,0 +1,34 @@
+<!-- Dummy post will show for status at main page if it clicked it take to popup where user can share posts-->
+<div id="textbox-style" class="textbox-style col-md-6 col-md-offset-3" (click)="popupModal.show()">
+        <div class="modal-header">
+                <div class="post-data">
+                    <div class="row add-post">
+                      <div class=" col-sm-3 text-data" ><span class="glyphicon glyphicon-pencil" ></span>Make a post</div>
+                      <div class="col-sm-3 image-data"><span class="glyphicon glyphicon-picture"></span>Photo</div>
+                      <div class="col-sm-6">
+                          <button type="button" class="close pull-right" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                        <div class="col-sm-12 input-group">
+                            <span class="input-group-addon post-input" ><img src="./assets/default.jpeg" class="profile-pic" alt="fb"></span>
+                            <span class="center-text">What's on your mind?</span>
+                        </div>
+                </div>
+            </div>
+      
+            <div class="modal-footer">
+              <label class="in-left">
+                <span id = "imagepic" class="glyphicon glyphicon-picture glyph-hover" title="add Picture"></span>
+                <input type="file" accept="image/*" style="display:none" />
+               </label>
+            </div>
+</div>
+
+<app-popup-dialog #popupModal></app-popup-dialog>

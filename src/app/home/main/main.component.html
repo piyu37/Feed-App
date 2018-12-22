@@ -1,0 +1,45 @@
+<!-- This div will show all the posts of all users -->
+<div id="textbox-style" class="textbox-style col-md-6 col-md-offset-3" *ngFor="let post of allPosts | reverse">
+      <div class="modal-body">
+          <div class="row">
+                  <div class="col-sm-12 input-group">
+                      <span class="input-group-addon post-input" ><img src="./assets/default.jpeg" class="profile-pic" alt="fb"></span>
+                      <span class="center-text for-color">{{post.postUserName}}</span><br>
+                      <span class="time-font for-color">{{post.postDate}}</span>
+                  </div>
+          </div>
+      </div>
+      <span class="padding-text">{{post.postText}}</span>
+      <span class="input-group-addon post-input" ><img src={{post.postImage}} class="photo-upload" alt="" /></span>
+      <div class="modal-footer">
+          <div id="liked-users{{post.postId}}" class="liked-users">
+              <div>
+                  <span *ngFor="let postlikeuser of allLikers">
+                      <span>{{postlikeuser.likerName}}</span><br>
+                  </span>
+              </div>
+          </div>
+        <span id="total-likes{{post.postId}}" class="total-likes" (mouseenter)="getLikedUsers(post.postId)" (mouseleave)="hideLikedUsers(post.postId)">{{post.postLikes}}</span> &nbsp;<span class="total-likes">Likes</span>
+        <div class="in-left">
+          <span class="for-margin" id={{post.postId}} (click)="likeClicked(post.postId)">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <a>Like</a>           
+          </span>
+          <span (click)="showComments(post.postId)">
+              <span class="glyphicon glyphicon-comment"></span>
+              <a>Comment</a>
+          </span>
+        </div>
+      </div>
+      <!-- Comment section -->
+      <div class="comment-decoration" id="sh-comm{{post.postId}}">
+          <span><img src="./assets/default.jpeg" class="comment-pic" alt="pp"></span>
+          <!-- after hitting enter it will call getComments($event)-->
+          <input type="text" class="user-comment" id="comment{{post.postId}}" placeholder="Write a comment" (keyup)="$event.keyCode == 13 ? getComments($event) : null" />
+          <div class="col-sm-12 input-group comment-margin" *ngFor="let mycomment of allComments | reverse">  <!-- showing comments in reverse order-->
+            <span class="input-group-addon post-input" ><img src="./assets/default.jpeg" class="comment-pic" alt="fb"></span>
+            <span class="center-text">{{mycomment.commenterName}}</span><br>
+            <span class="time-font">{{mycomment.commenterText}}</span>
+          </div>
+      </div>
+</div>
